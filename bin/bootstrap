@@ -34,7 +34,7 @@ golang_tp=(
   github.com/gorilla/schema
   github.com/gorilla/securecookie
   github.com/gorilla/sessions
-  github.com/gorilla/tmux
+  github.com/gorilla/mux
   github.com/gorilla/websocket
   github.com/julienschmidt/httprouter
   github.com/mattn/go-sqlite3
