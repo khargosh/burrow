@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Description: Wraps Google App Engine to use our repo environment.
+TOP_DIR=$(git rev-parse --show-toplevel)
+
+# Don't allow the system GOPATH to be used. We only allow workspace libraries.
+gopath=\
+${TOP_DIR}
+
+env GOPATH=${gopath} goapp $*
