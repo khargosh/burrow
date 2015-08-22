@@ -1,22 +1,22 @@
 #!/bin/bash
 #
 # Description: Releases for this script are available at:
-#   https://gist.github.com/gorakhargosh/c3902d08a939995fb4af/
+#   https://github.com/khargosh/burrow
 #
-# The above URL has a bit.ly link as:
-#   http://bit.ly/bhojo-config
+# The above URL has a j.mp link as:
+#   http://j.mp/khargosh
 #
 # The script is intended to be written and reviewed in the repository
 # but released as a gist at the abovementioned URL.
 #
 # Executing this script requires issuing the following command:
 #
-#   curl -fsSL http://bit.ly/bhojo-config > /tmp/configure.sh
-#   bash /tmp/configure.sh
+#   curl -fsSL http://j.mp/khargosh > /tmp/khargo.sh
+#   bash /tmp/khargo.sh
 #
 # To debug this script use:
 #
-#   bash -x /tmp/configure.sh
+#   bash -x /tmp/khargo.sh
 
 # TODO(yesudeep):
 # 1. Add error handling for installation of osxfuse.
