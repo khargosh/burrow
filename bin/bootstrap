@@ -11,16 +11,33 @@ logfile=${TOP_DIR}/.bootstrap.log
 
 # Third party golang libs.
 golang_tp=(
-  github.com/gin-gonic/gin
-  github.com/go-sql-driver/mysql
+  github.com/golang/protobuf
   github.com/golang/protobuf/proto
   github.com/golang/protobuf/protoc-gen-go
+  golang.org/x/crypto
+  golang.org/x/exp
+  golang.org/x/image
+  golang.org/x/net
+  golang.org/x/oauth2
+  golang.org/x/sys
+  golang.org/x/text
+  golang.org/x/tools
+  google.golang.org/appengine
+  google.golang.org/cloud
+
+  github.com/codegangsta/negroni
+  github.com/gin-gonic/gin
+  github.com/go-sql-driver/mysql
+  github.com/gorilla/context
+  github.com/gorilla/reverse
+  github.com/gorilla/rpc
+  github.com/gorilla/schema
+  github.com/gorilla/securecookie
+  github.com/gorilla/sessions
+  github.com/gorilla/tmux
   github.com/gorilla/websocket
   github.com/julienschmidt/httprouter
   github.com/mattn/go-sqlite3
-  golang.org/x/net/context
-  google.golang.org/appengine
-  google.golang.org/cloud
 )
 
 
