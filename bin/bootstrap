@@ -1,0 +1,65 @@
+#!/bin/bash
+#
+# Description:
+#   Bootstraps repo environment.
+
+TOP_DIR=$(git rev-parse --show-toplevel)
+BIN_DIR=${TOP_DIR}/bin
+
+logfile=${TOP_DIR}/.bootstrap.log
+
+
+# Third party golang libs.
+golang_tp=(
+  github.com/gin-gonic/gin
+  github.com/go-sql-driver/mysql
+  github.com/golang/protobuf/proto
+  github.com/golang/protobuf/protoc-gen-go
+  github.com/gorilla/websocket
+  github.com/julienschmidt/httprouter
+  github.com/mattn/go-sqlite3
+  golang.org/x/net/context
+  google.golang.org/appengine
+  google.golang.org/cloud
+)
+
+
+# Logs information to the console.
+function info() {
+  printf "$1\n" | tee -a $logfile
+}
+
+
+# Push directory silent.
+function pushdir() {
+  pushd "$@" >/dev/null 2>&1
+}
+
+
+# Pop directory silent.
+function popdir() {
+  popd "$@" >/dev/null 2>&1
+}
+
+
+# Fetches the source code for a given go package.
+#
+# @param {url} The import URL for the package.
+function golang_fetch() {
+  url=$1
+  ${TOP_DIR}/bin/go get -u $url
+}
+
+
+# Fetches golang source code for all enlisted third party packages.
+function golang_fetch_all_tp() {
+  for package in "${golang_tp[@]}"; do
+    golang_fetch $package
+  done
+}
+
+pushdir $TOP_DIR
+
+golang_fetch_all_tp
+
+popdir
