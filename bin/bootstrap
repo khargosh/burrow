@@ -24,6 +24,8 @@ golang_tp=(
   golang.org/x/tools
   google.golang.org/appengine
   google.golang.org/cloud
+  github.com/GeertJohan/go.rice
+  github.com/GeertJohan/go.rice/rice
 
   github.com/codegangsta/negroni
   github.com/gin-gonic/gin
