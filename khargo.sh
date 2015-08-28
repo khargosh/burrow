@@ -1375,21 +1375,21 @@ function install_all() {
   # Install packages.
   install_go "1.5" $additional_go_packages
 
-  # install_watchman "v3.0.0"
+  install_watchman "v3.0.0"
   # install_buck "5a6d5d00d7f3be1329bf501c710ffa409ecea3d8"
-  # install_android_sdk "r24.0.2" $android_packages
-  # install_tmux "1.9" "a" "2.0.21" "5.9"
-  # install_python_packages $python_packages
-  # install_ack
-  # install_protobuf_compiler "2.6.1"
+  install_android_sdk "r24.0.2" $android_packages
+  install_tmux "1.9" "a" "2.0.21" "5.9"
+  install_python_packages $python_packages
+  install_ack
+  install_protobuf_compiler "2.6.1"
   # install_dart_sdk stable 44672 "1.9.1"
-  # install_node "v0.11.14"
-  # install_google_cloud_sdk
-  # install_tup "1de2e9e0d7ce65f0ba90d1304c07ddbc0a6a2dc4" #"v0.7.3"
-  # install_fish_shell "2.1.1" # "bb01e5f81a02d45da654c597ca4a983fc152e4f8"
-  # configure_java
-  # install_shell_config
-  # install_emacs_config
+  install_node "v0.11.14"
+  install_google_cloud_sdk
+  install_tup "1de2e9e0d7ce65f0ba90d1304c07ddbc0a6a2dc4" #"v0.7.3"
+  install_fish_shell "2.1.1" # "bb01e5f81a02d45da654c597ca4a983fc152e4f8"
+  configure_java
+  install_shell_config
+  install_emacs_config
 }
 
 
