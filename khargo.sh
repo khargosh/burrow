@@ -858,7 +858,13 @@ function install_go() {
     case "$OSTYPE" in
       "linux-gnu" )
         download "https://storage.googleapis.com/golang/go${go_version}.linux-${arch}.tar.gz" "/tmp/go${go_version}.linux-${arch}.tar.gz"
-
+        pushd /tmp
+        tar zxvf "/tmp/go${go_version}.linux-${arch}.tar.gz"
+        sudo mv go/ /usr/local/
+        popd
+        info "Installing additional go packages:\n$additional_packages"
+        sudo mkdir -p ${go_path_dir}
+        sudo env GOPATH="${go_path_dir}" ${go_root_dir}/bin/go get -u $additional_packages >> $logfile 2>&1
         ;;
       "darwin"* )
         mkdir -p $go_path_dir
@@ -1373,20 +1379,21 @@ function install_all() {
   esac
 
   # Install packages.
-  install_go "1.5" $additional_go_packages
+  install_go "1.5.1" $additional_go_packages
 
-  install_watchman "v3.0.0"
+  return
+  # install_watchman "v3.0.0"
   # install_buck "5a6d5d00d7f3be1329bf501c710ffa409ecea3d8"
-  install_android_sdk "r24.0.2" $android_packages
+  # install_android_sdk "r24.0.2" $android_packages
   install_tmux "1.9" "a" "2.0.21" "5.9"
   install_python_packages $python_packages
   install_ack
-  install_protobuf_compiler "2.6.1"
+  # install_protobuf_compiler "2.6.1"
   # install_dart_sdk stable 44672 "1.9.1"
-  install_node "v0.11.14"
-  install_google_cloud_sdk
-  install_tup "1de2e9e0d7ce65f0ba90d1304c07ddbc0a6a2dc4" #"v0.7.3"
-  install_fish_shell "2.1.1" # "bb01e5f81a02d45da654c597ca4a983fc152e4f8"
+  # install_node "v0.11.14"
+  # install_google_cloud_sdk
+  # install_tup "1de2e9e0d7ce65f0ba90d1304c07ddbc0a6a2dc4" #"v0.7.3"
+  install_fish_shell "2.2.0" # "bb01e5f81a02d45da654c597ca4a983fc152e4f8"
   configure_java
   install_shell_config
   install_emacs_config
