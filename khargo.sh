@@ -1381,7 +1381,6 @@ function install_all() {
   # Install packages.
   install_go "1.5.1" $additional_go_packages
 
-  return
   # install_watchman "v3.0.0"
   # install_buck "5a6d5d00d7f3be1329bf501c710ffa409ecea3d8"
   # install_android_sdk "r24.0.2" $android_packages
