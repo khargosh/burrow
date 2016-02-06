@@ -18,6 +18,11 @@ cc_binary(
   srcs = ["hello.c"],
 )
 
+cc_binary(
+  name = "hello_cpp",
+  srcs = ["hello.cpp"],
+)
+
 py_binary(
   name = "hello_py",
   srcs = ["hello.py"],
