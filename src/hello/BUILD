@@ -17,3 +17,9 @@ cc_binary(
   name = "hello_c",
   srcs = ["hello.c"],
 )
+
+py_binary(
+  name = "hello_py",
+  srcs = ["hello.py"],
+  main = "hello.py",
+)
