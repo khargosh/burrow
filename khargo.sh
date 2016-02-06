@@ -118,6 +118,7 @@ parallel
 pdnsd
 pkg-config
 readline
+racket
 ssh-copy-id
 subversion
 tig
