@@ -1,4 +1,6 @@
-/src/
+/src/*
+!/src/WORKSPACE
+!/src/BUILD
 /pkg/
 .DS_Store
 /bin/protoc-gen-go
