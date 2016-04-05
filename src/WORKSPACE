@@ -18,10 +18,13 @@ git_repository(
 load('@io_bazel_rules_go//go:def.bzl', 'go_repositories')
 go_repositories()
 
+
+ANDROID_SDK_HOME = "/Users/yesudeep/Library/Android/sdk"
+
 android_sdk_repository(
     name = "androidsdk",
     # Replace with path to Android SDK on your system
-    path = "/Users/yesudeep/Library/Android/sdk",
+    path = ANDROID_SDK_HOME,
     # Replace with the Android SDK API level
     api_level = 23,
     # Replace with the version in sdk/build-tools/
@@ -31,7 +34,7 @@ android_sdk_repository(
 android_ndk_repository(
     name = "androidndk",
     # Replace with path to Android NDK on your system
-    path = "/Users/yesudeep/Library/Android/ndk",
+    path = ANDROID_SDK_HOME + "/ndk-bundle",
     # Replace with the Android NDK API level
     api_level = 21
 )
