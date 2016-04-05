@@ -36,10 +36,10 @@ android_sdk_repository(
     build_tools_version="23.0.0"
 )
 
-android_ndk_repository(
-    name = "androidndk",
-    # Replace with path to Android NDK on your system
-    path = ANDROID_NDK_HOME,
-    # Replace with the Android NDK API level
-    api_level = 21
-)
+#android_ndk_repository(
+#    name = "androidndk",
+#    # Replace with path to Android NDK on your system
+#    path = ANDROID_NDK_HOME,
+#    # Replace with the Android NDK API level
+#    api_level = 21
+#)
