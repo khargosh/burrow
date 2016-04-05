@@ -2,7 +2,7 @@
 git_repository(
     name = "io_bazel_rules_closure",
     remote = "https://github.com/bazelbuild/rules_closure.git",
-    tag = "0.0.1",
+    commit = "329ce4674350ce8c4e7edea6dae3c2841822e0db",
 )
 
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
@@ -17,3 +17,21 @@ git_repository(
 
 load('@io_bazel_rules_go//go:def.bzl', 'go_repositories')
 go_repositories()
+
+android_sdk_repository(
+    name = "androidsdk",
+    # Replace with path to Android SDK on your system
+    path = "/Users/yesudeep/Library/Android/sdk",
+    # Replace with the Android SDK API level
+    api_level = 23,
+    # Replace with the version in sdk/build-tools/
+    build_tools_version="23.0.0"
+)
+
+android_ndk_repository(
+    name = "androidndk",
+    # Replace with path to Android NDK on your system
+    path = "/Users/yesudeep/Library/Android/ndk",
+    # Replace with the Android NDK API level
+    api_level = 21
+)
