@@ -1,3 +1,10 @@
+# Home directory. 
+#
+#HOME = ""
+
+ANDROID_SDK_HOME = HOME + "/Library/Android/sdk"
+ANDROID_NDK_HOME = HOME + "/Library/Android/sdk/ndk-bundle"
+
 # Load Closure repository and build definitions.
 git_repository(
     name = "io_bazel_rules_closure",
@@ -19,8 +26,6 @@ load('@io_bazel_rules_go//go:def.bzl', 'go_repositories')
 go_repositories()
 
 
-ANDROID_SDK_HOME = "/Users/yesudeep/Library/Android/sdk"
-
 android_sdk_repository(
     name = "androidsdk",
     # Replace with path to Android SDK on your system
@@ -31,10 +36,10 @@ android_sdk_repository(
     build_tools_version="23.0.0"
 )
 
-#android_ndk_repository(
-#    name = "androidndk",
-#    # Replace with path to Android NDK on your system
-#    path = ANDROID_SDK_HOME + "/ndk-bundle",
-#    # Replace with the Android NDK API level
-#    api_level = 21
-#)
+android_ndk_repository(
+    name = "androidndk",
+    # Replace with path to Android NDK on your system
+    path = ANDROID_NDK_HOME,
+    # Replace with the Android NDK API level
+    api_level = 21
+)
