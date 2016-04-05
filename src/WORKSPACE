@@ -1,5 +1,4 @@
-load("/tools/build_rules/go/def", "go_repositories")
-
+# Load Closure repository and build definitions.
 git_repository(
     name = "io_bazel_rules_closure",
     remote = "https://github.com/bazelbuild/rules_closure.git",
@@ -9,4 +8,12 @@ git_repository(
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_repositories")
 closure_repositories()
 
+# Load Golang repository and build definitions.
+git_repository(
+    name = "io_bazel_rules_go",
+    remote = "https://github.com/bazelbuild/rules_go.git",
+    commit = "373feb67001252371054c3388291661352c4eb90",
+)
+
+load('@io_bazel_rules_go//go:def.bzl', 'go_repositories')
 go_repositories()
